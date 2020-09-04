@@ -1,47 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="stylesheet" href="/build/tailwind.css">
-  <title>Welcome to Tailwind!</title>
-</head>
-<body class="antialiased">
-  <div class="w-full bg-red-200 p-12">
-    <div class="max-w-md mx-auto p-2 bg-red-500 rounded shadow-lg text-center">
-      <div class="border-8 text-red-900 font-bold bg-white border-red-200 text-4xl mt-10 mx-auto h-48 w-48 rounded-full flex justify-center items-center">
-        25:00
-      </div>
-      <p class="mt-6 text-red-900 text-2xl">
-        Pomodoro Clock
-      </p>
-      <hr class="mt-6"/>
-      <div class="flex mt-6 justify-evenly">
-        <div>
-          <p class="text-sm text-red-900">session time</p>
-          <p class="font-bold text-3xl">25:00</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="stylesheet" href="/build/tailwind.css" />
+    <title>Red Pomodoro Clock</title>
+  </head>
+  <body class="antialiased">
+    <div class="w-full bg-red-200 p-12">
+      <div
+        class="max-w-md mx-auto p-2 bg-red-500 rounded shadow-lg text-center"
+      >
+        <div
+          id="js-timer"
+          class="border-8 text-red-900 font-bold bg-white border-red-200 text-4xl mt-10 mx-auto h-48 w-48 rounded-full flex justify-center items-center"
+        >
+          --:--
+        </div>
+        <p class="mt-6 text-red-900 text-2xl" id="js-status">
+          Loading...
+        </p>
+        <hr class="mt-6" />
+        <div class="flex mt-6 justify-evenly">
           <div>
-            <button class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg">-</button>
-            <button class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg">+</button>
+            <p class="text-sm text-red-900">session time</p>
+            <p class="font-bold text-3xl" id="js-session-value">--:--</p>
+            <div>
+              <button
+                id="js-session-timer-dec"
+                class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg"
+              >
+                -
+              </button>
+              <button
+                id="js-session-timer-inc"
+                class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg"
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm text-indigo-900">break time</p>
+            <p class="font-bold text-3xl" id="js-break-value">--:--</p>
+            <div>
+              <button
+                id="js-break-timer-dec"
+                class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg"
+              >
+                -
+              </button>
+              <button
+                id="js-break-timer-inc"
+                class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg"
+              >
+                +
+              </button>
+            </div>
           </div>
         </div>
-        <div> 
-          <p class="text-sm text-indigo-900">break time</p>
-          <p class="font-bold text-3xl">05:00</p>
-          <div>
-            <button class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg">-</button>
-            <button class="font-mono px-3 py-1 bg-gray-800 text-white rounded-lg">+</button>
-          </div>
+        <hr class="mt-6" />
+        <div class="flex my-6 justify-center">
+          <button
+            class="px-3 mr-2 py-1 bg-gray-800 text-white rounded-lg"
+            id="js-start-btn"
+          >
+            Start
+          </button>
+          <button
+            class="px-3 ml-2 py-1 bg-gray-800 text-white rounded-lg"
+            id="js-reset-btn"
+          >
+            Reset
+          </button>
         </div>
-      </div>
-      <hr class="mt-6"/>
-      <div class="flex my-6 justify-center">
-        <button class="px-3 mr-2 py-1 bg-gray-800 text-white rounded-lg">Start</button>
-        <button class="px-3 ml-2 py-1 bg-gray-800 text-white rounded-lg">Reset</button>
       </div>
     </div>
-  </div>
-</body>
+    <script src="/app.js"></script>
+  </body>
 </html>
